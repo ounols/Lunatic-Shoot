@@ -12,8 +12,8 @@ public:
 	MeshObject(char* filename);
 	~MeshObject();
 
-	HRESULT Create(char* filename, LPCSTR Texture);
-	HRESULT Create(char* filename);
+	HRESULT CreateFBX(char* FBXfilename);
+	HRESULT CreateX(char* filename);
 	void Shutdown();
 
 	void SetupMatrix();

@@ -1,5 +1,6 @@
 #include "MeshObject.h"
 #include "ResourceClass.h"
+//#include "MeshLoader.h"
 
 
 MeshObject::MeshObject()
@@ -31,7 +32,7 @@ MeshObject::MeshObject(char* filename){
 
 	identity();
 
-	Create(filename);
+	CreateX(filename);
 }
 
 
@@ -49,61 +50,62 @@ void MeshObject::identity(){
 }
 
 
-HRESULT MeshObject::Create(char* filename, LPCSTR Texture)
+HRESULT MeshObject::CreateFBX(char* FBXfilename)
 {
-	LPD3DXBUFFER pD3DXMtrlBuffer;
+	////LPD3DXBUFFER pD3DXMtrlBuffer;
 
 
-	// Load the mesh from the specified file
-	if (FAILED(D3DXLoadMeshFromXA(filename, D3DXMESH_SYSTEMMEM,
-		RES->getDeivce(), NULL,
-		&pD3DXMtrlBuffer, NULL, &m_dwNumMaterials,
-		&m_pMesh)))
-	{
-		MessageBox(NULL, L"메시를 찾을 수 없습당", L"Error", MB_OK);
-		return E_FAIL;
-	}
+	//// Load the mesh from the specified file
+	//MeshLoader* FBXLoader = new MeshLoader();
 
-	// We need to extract the material properties and texture names from the 
-	// pD3DXMtrlBuffer
-	D3DXMATERIAL* d3dxMaterials = (D3DXMATERIAL*)pD3DXMtrlBuffer->GetBufferPointer();
-	m_pMaterials = new D3DMATERIAL9[m_dwNumMaterials];
-	if (m_pMaterials == NULL)
-		return E_OUTOFMEMORY;
-	m_textures = new LPDIRECT3DTEXTURE9[m_dwNumMaterials];
-	if (m_textures == NULL)
-		return E_OUTOFMEMORY;
+	//FBXLoader->Initialize();
+	//FBXLoader->LoadScene(FBXfilename);
+	//FBXLoader->AnalyzeFBX();
 
-	for (DWORD i = 0; i < m_dwNumMaterials; i++)
-	{
-		// Copy the material
-		m_pMaterials[i] = d3dxMaterials[i].MatD3D;
+	//m_pMesh = FBXLoader->getMesh();
 
-		// Set the ambient color for the material (D3DX does not do this)
-		m_pMaterials[i].Ambient = m_pMaterials[i].Diffuse;
 
-		m_textures[i] = NULL;
-		if (d3dxMaterials[i].pTextureFilename != NULL &&
-			lstrlenA(d3dxMaterials[i].pTextureFilename) > 0)
-		{
-			// Create the texture
-			if (FAILED(D3DXCreateTextureFromFileA(RES->getDeivce(),
-				d3dxMaterials[i].pTextureFilename,
-				&m_textures[i])))
-			{
-				MessageBox(NULL, L"텍스쳐를 찾을 수 없슴당", L"Error", MB_OK);
-			}
-		}
-	}
+	//
+	//// We need to extract the material properties and texture names from the 
+	//// pD3DXMtrlBuffer
+	////D3DXMATERIAL* d3dxMaterials = (D3DXMATERIAL*)pD3DXMtrlBuffer->GetBufferPointer();
+	//m_pMaterials = new D3DMATERIAL9[m_dwNumMaterials];
+	//if (m_pMaterials == NULL)
+	//	return E_OUTOFMEMORY;
+	//m_textures = new LPDIRECT3DTEXTURE9[m_dwNumMaterials];
+	//if (m_textures == NULL)
+	//	return E_OUTOFMEMORY;
 
-	// Done with the material buffer
-	pD3DXMtrlBuffer->Release();
+	//for (DWORD i = 0; i < m_dwNumMaterials; i++)
+	//{
+	//	// Copy the material
+	//	//m_pMaterials[i] = d3dxMaterials[i].MatD3D;
 
+	//	// Set the ambient color for the material (D3DX does not do this)
+	//	//m_pMaterials[i].Ambient = m_pMaterials[i].Diffuse;
+
+	//	m_textures[i] = NULL;
+	//	//if (d3dxMaterials[i].pTextureFilename != NULL &&
+	//	//	lstrlenA(d3dxMaterials[i].pTextureFilename) > 0)
+	//	//{
+	//		// Create the texture
+	//		if (FAILED(D3DXCreateTextureFromFileA(RES->getDeivce(),
+	//			FBXLoader->getTextureName(i),
+	//			&m_textures[i])))
+	//		{
+	//			MessageBox(NULL, L"텍스쳐를 찾을 수 없슴당", L"Error", MB_OK);
+	//		}
+	//	//}
+	//}
+
+	//// Done with the material buffer
+	////pD3DXMtrlBuffer->Release();
+	//FBXLoader->CleanupFbxManager();
 
 	return S_OK;
 }
 
-HRESULT MeshObject::Create(char* filename)
+HRESULT MeshObject::CreateX(char* filename)
 {
 	LPD3DXBUFFER pD3DXMtrlBuffer;
 

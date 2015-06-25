@@ -21,10 +21,10 @@ SceneGame::~SceneGame()
 
 bool SceneGame::Initailze(){
 
-	m_pointlight = new LightClass();
-	m_pointlightPos = D3DXVECTOR3(0, 2.0, 0);
-	m_pointlight->CreatePointLight(D3DXCOLOR(0.5, 0.5, 0.5, 1.0), 100.0f, &m_pointlightPos.x, &m_pointlightPos.y, &m_pointlightPos.z);
-	m_pointlight->LightEnable(true);
+	//m_pointlight = new LightClass();
+	//m_pointlightPos = D3DXVECTOR3(0, 2.0, 0);
+	//m_pointlight->CreatePointLight(D3DXCOLOR(0.5, 0.5, 0.5, 1.0), 100.0f, &m_pointlightPos.x, &m_pointlightPos.y, &m_pointlightPos.z);
+	//m_pointlight->LightEnable(true);
 
 	Sprite.push_back(new SpriteObject(RES->getTexture("player"), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(0, 0, 0), 55, 65, 0));
 	Sprite.push_back(new SpriteObject(RES->getTexture("player_head"), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(0, 0, 0), 64, 52, 0));
@@ -40,7 +40,10 @@ bool SceneGame::Initailze(){
 	Object.push_back(new MeshObject("./ss/ground.x"));
 	//Object[3]->Scaling(5, 0, 5, true);
 	Object[3]->Translation(0, -1, 0, true);
-	Object.push_back(new MeshObject("./ss/tiger.x"));
+	//Object.push_back(new MeshObject("./ss/tiger.x"));
+
+	//Object.push_back(new MeshObject());
+	//Object[4]->CreateFBX("./ss/box.fbx");
 	
 	return true;
 }

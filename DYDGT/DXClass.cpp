@@ -42,7 +42,7 @@ bool DXClass::Initailze(HWND hWnd){
 	g_pD3dDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
 
 	// Turn on ambient lighting 
-	g_pD3dDevice->SetRenderState(D3DRS_AMBIENT, 0x00838383);
+	g_pD3dDevice->SetRenderState(D3DRS_AMBIENT, 0x00f5f5f5);
 	g_pD3dDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
 	g_pD3dDevice->SetRenderState(D3DRS_NORMALIZENORMALS, TRUE);
 	g_pD3dDevice->SetRenderState(D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_MATERIAL);
