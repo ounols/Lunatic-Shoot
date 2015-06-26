@@ -34,7 +34,7 @@ HRESULT LightClass::CreatePointLight(D3DXCOLOR diffuse, float range, float* x, f
 	light.Diffuse = diffuse;
 	light.Position = D3DXVECTOR3(*x, *y, *z);
 	light.Range = range;
-	light.Attenuation0 = 0.0f;    // no constant inverse attenuation
+	light.Attenuation0 = 0.1f;    // no constant inverse attenuation
 	light.Attenuation1 = 0.125f;    // only .125 inverse attenuation
 	light.Attenuation2 = 0.0f;    // no square inverse attenuation
 
@@ -59,6 +59,7 @@ HRESULT LightClass::LightEnable(bool isEnable){
 
 	RES->getDeivce()->SetLight(0, &light);
 	RES->getDeivce()->LightEnable(0, TRUE);
+
 
 	RES->getDeivce()->SetMaterial(&material);
 

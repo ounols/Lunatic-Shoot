@@ -22,14 +22,27 @@ bool DXClass::Initailze(HWND hWnd){
 
 	g_pD3D = Direct3DCreate9(D3D_SDK_VERSION);
 
+	D3DDISPLAYMODE d3ddm;
+
+	g_pD3D->GetAdapterDisplayMode(D3DADAPTER_DEFAULT, &d3ddm);
 
 	D3DPRESENT_PARAMETERS d3dpp;
 	ZeroMemory(&d3dpp, sizeof(d3dpp));
 	d3dpp.Windowed = TRUE;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+	d3dpp.BackBufferFormat = d3ddm.Format;
 	d3dpp.EnableAutoDepthStencil = TRUE;
 	d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
+
+	
+	//fsaa
+
+	DWORD total = 0;
+	if (SUCCEEDED(g_pD3D->CheckDeviceMultiSampleType(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, d3ddm.Format, true, D3DMULTISAMPLE_NONMASKABLE, &total)))
+	{
+		d3dpp.MultiSampleType = D3DMULTISAMPLE_4_SAMPLES;
+		d3dpp.MultiSampleQuality = total - 1;
+	}
 
 	// Create the D3DDevice
 	if (FAILED(g_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,
@@ -42,10 +55,13 @@ bool DXClass::Initailze(HWND hWnd){
 	g_pD3dDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
 
 	// Turn on ambient lighting 
-	g_pD3dDevice->SetRenderState(D3DRS_AMBIENT, 0x00f5f5f5);
+	g_pD3dDevice->SetRenderState(D3DRS_AMBIENT, 0x00777777);
 	g_pD3dDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
 	g_pD3dDevice->SetRenderState(D3DRS_NORMALIZENORMALS, TRUE);
 	g_pD3dDevice->SetRenderState(D3DRS_DIFFUSEMATERIALSOURCE, D3DMCS_MATERIAL);
+	g_pD3dDevice->SetRenderState(D3DRS_SPECULARMATERIALSOURCE, D3DMCS_MATERIAL);
+	g_pD3dDevice->SetRenderState(D3DRS_EMISSIVEMATERIALSOURCE, D3DMCS_MATERIAL);
+
 
 	RES->Initalize(g_pD3dDevice);
 

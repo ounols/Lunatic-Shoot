@@ -41,6 +41,10 @@ private:
 	bool				m_bUseMaterials;
 
 	D3DXMATRIXA16 worldMatrix, recycleMatrix;
+
+public:
+	D3DXVECTOR3 pos;
+	
 };
 
 
