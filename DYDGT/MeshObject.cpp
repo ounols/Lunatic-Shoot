@@ -265,3 +265,10 @@ HRESULT MeshObject::Render(){
 	return S_OK;
 
 }
+
+
+void MeshObject::addChild(MeshObject* child){
+
+
+
+}
