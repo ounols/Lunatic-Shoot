@@ -3,6 +3,7 @@
 
 #include <d3d9.h>
 #include <d3dx9.h>
+#include <vector>
 
 class MeshObject
 {
@@ -26,6 +27,8 @@ public:
 
 	HRESULT Render();
 
+	void addChild(MeshObject* child);
+
 
 
 private:
@@ -42,9 +45,7 @@ private:
 
 	D3DXMATRIXA16 worldMatrix, recycleMatrix;
 
-public:
-	D3DXVECTOR3 pos;
-	
+	vector<MeshObject*> m_child;
 };
 
 
