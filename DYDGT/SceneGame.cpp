@@ -40,7 +40,8 @@ bool SceneGame::Initailze(){
 	Object.push_back(new MeshObject("./models/ground.x"));
 	Object[3]->Translation(0, -1, 0, true);
 
-	Object.push_back(new MeshObject("./models/ben.x"));
+	Object.push_back(new MeshObject());
+	Object[4]->CreateFBX("./modela/test.fbx");
 	Object[4]->Scaling(0.5, 0.5, 0.5, true);
 	Object[4]->Translation(0, -1, 0, true);
 

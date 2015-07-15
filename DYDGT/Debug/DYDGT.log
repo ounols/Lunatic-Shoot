@@ -1,26 +1,70 @@
-﻿Build started 2015-06-26 오전 10:53:38.
+﻿Build started 2015-07-15 오후 4:29:14.
      1>Project "C:\Users\smart\Documents\GitHub\Lunatic-Shoot\DYDGT\DYDGT.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt DXClass.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D FBXSDK_NEW_API /D WIN32 /D _DEBUG /D _WINDOWS /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CameraClass.cpp DXClass.cpp GraphicsClass.cpp InputClass.cpp LightClass.cpp Main.cpp MeshObject.cpp ResourceClass.cpp SceneGame.cpp SpriteObject.cpp SystetmClass.cpp TimerClass.cpp
+         TimerClass.cpp
+         SystetmClass.cpp
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(29): error C4995: 'swprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(30): error C4995: 'vswprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(32): error C4995: 'wcscat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(34): error C4995: 'wcscpy': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(46): error C4995: 'gets': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(50): error C4995: 'sprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(53): error C4995: 'vsprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(20): error C4995: 'strcat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(21): error C4995: 'strcpy': name was marked as #pragma deprecated
+     1>c:\program files\autodesk\fbx\fbx sdk\2013.3\include\fbxsdk\core\base\fbxstring.h(41): fatal error C1189: #error :  Unsupported platform
+         SpriteObject.cpp
+     1>c:\users\smart\documents\github\lunatic-shoot\dydgt\spriteobject.cpp(18): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\smart\documents\github\lunatic-shoot\dydgt\spriteobject.cpp(19): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\smart\documents\github\lunatic-shoot\dydgt\spriteobject.cpp(20): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\smart\documents\github\lunatic-shoot\dydgt\spriteobject.cpp(21): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\smart\documents\github\lunatic-shoot\dydgt\spriteobject.cpp(65): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\smart\documents\github\lunatic-shoot\dydgt\spriteobject.cpp(81): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+         SceneGame.cpp
+     1>c:\program files\autodesk\fbx\fbx sdk\2013.3\include\fbxsdk\core\base\fbxstring.h(41): fatal error C1189: #error :  Unsupported platform
+         ResourceClass.cpp
+         MeshObject.cpp
+     1>c:\program files\autodesk\fbx\fbx sdk\2013.3\include\fbxsdk\core\base\fbxstring.h(41): fatal error C1189: #error :  Unsupported platform
+         Main.cpp
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(29): error C4995: 'swprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(30): error C4995: 'vswprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(32): error C4995: 'wcscat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(34): error C4995: 'wcscpy': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(46): error C4995: 'gets': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(50): error C4995: 'sprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(53): error C4995: 'vsprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(20): error C4995: 'strcat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(21): error C4995: 'strcpy': name was marked as #pragma deprecated
+     1>c:\program files\autodesk\fbx\fbx sdk\2013.3\include\fbxsdk\core\base\fbxstring.h(41): fatal error C1189: #error :  Unsupported platform
+         LightClass.cpp
+         InputClass.cpp
+         GraphicsClass.cpp
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(29): error C4995: 'swprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(30): error C4995: 'vswprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(32): error C4995: 'wcscat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(34): error C4995: 'wcscpy': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(46): error C4995: 'gets': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(50): error C4995: 'sprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(53): error C4995: 'vsprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(20): error C4995: 'strcat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(21): error C4995: 'strcpy': name was marked as #pragma deprecated
+     1>c:\program files\autodesk\fbx\fbx sdk\2013.3\include\fbxsdk\core\base\fbxstring.h(41): fatal error C1189: #error :  Unsupported platform
          DXClass.cpp
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(29): error C4995: 'swprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(30): error C4995: 'vswprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(32): error C4995: 'wcscat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cwchar(34): error C4995: 'wcscpy': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(46): error C4995: 'gets': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(50): error C4995: 'sprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstdio(53): error C4995: 'vsprintf': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(20): error C4995: 'strcat': name was marked as #pragma deprecated
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\cstring(21): error C4995: 'strcpy': name was marked as #pragma deprecated
      1>c:\users\smart\documents\github\lunatic-shoot\dydgt\dxclass.cpp(52): warning C4305: 'return' : truncation from 'HRESULT' to 'bool'
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\smart\Documents\GitHub\Lunatic-Shoot\Debug\DYDGT.exe" /INCREMENTAL /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\smart\Documents\GitHub\Lunatic-Shoot\Debug\DYDGT.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\smart\Documents\GitHub\Lunatic-Shoot\Debug\DYDGT.lib" /MACHINE:X86 Debug\DYDGT.res
-         Debug\CameraClass.obj
-         Debug\DXClass.obj
-         Debug\GraphicsClass.obj
-         Debug\InputClass.obj
-         Debug\LightClass.obj
-         Debug\Main.obj
-         Debug\MeshObject.obj
-         Debug\ResourceClass.obj
-         Debug\SceneGame.obj
-         Debug\SpriteObject.obj
-         Debug\SystetmClass.obj
-         Debug\TimerClass.obj
-         DYDGT.vcxproj -> C:\Users\smart\Documents\GitHub\Lunatic-Shoot\Debug\DYDGT.exe
-     1>Done Building Project "C:\Users\smart\Documents\GitHub\Lunatic-Shoot\DYDGT\DYDGT.vcxproj" (Build target(s)).
+         CameraClass.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\smart\Documents\GitHub\Lunatic-Shoot\DYDGT\DYDGT.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:09.09
